@@ -12,5 +12,6 @@ void fibo(int n){
 }
 int main(){
     fibo(100);
+    Xyz;
     
 }
