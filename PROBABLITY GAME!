@@ -1,0 +1,85 @@
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<conio.h>
+int count;
+int c;
+int pa;
+int o;
+int 
+main ()
+{
+int n;
+int f;
+void playgame();
+
+
+  printf("LET THE GAME BEGIN!!\n");
+  do
+    {
+      printf("ENTER THE NUMBER OF TIMES YOU WANT TO PLAY!:\n");
+	    scanf ("%d", &c);
+		printf("DO YOU WANT TO PLAY WITH THE PREVIOUS AMOUNT(1/0)\n");
+		scanf("%d",&f);
+		if(f==0)
+		
+		{
+      printf ("ENTER YOUR AMOUNT:\n");
+      scanf ("%d", &count);
+   playgame();
+
+	  printf ("WANT TO PLAY MORE(1/0)?");
+	  scanf ("%d", &o);
+		}
+		else if(f==1)
+		{
+            FILE*a;
+			a=fopen("M5.txt","w");
+          int w=getw(a);
+		  printf("YOUR PREVIOUS SCORE IS %d\n",w);
+            count=w;   
+               playgame();
+ printf ("WANT TO PLAY MORE(1/0)?");
+	  scanf ("%d", &o);
+	  fclose(a);
+		}
+			
+    }
+      while (o == 1);
+if(o==0)
+printf("THANKS FOR PLAYING WITH US!!");
+printf("YOUR FINAL SCORE IS %d",count);
+
+
+      return 0;
+    }
+ 
+  void playgame ()
+  {
+
+    for (int n = c-1; n >= 0; --n)
+      {
+	int x;
+	
+	printf ("ENTER YOUR NUMBER:\n");
+	scanf ("%d", &x);
+	int k = rand () % 2;
+	printf ("COMPUTER CHOSE: %d\n", k);
+	if (x == k)
+	  {
+	    printf ("YOU WON!!\n");
+	    count = count + 500;
+	  }
+	else
+	  {
+	    printf ("YOU LOSE!!\n");
+	    count = count - 500;
+	  }
+
+
+	printf ("ONLY %d TRIES LEFT!!!\n", n);
+
+      }
+  } 
+ 
